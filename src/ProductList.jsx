@@ -260,7 +260,7 @@ function ProductList({ onHomeClick }) {
         dispatch(addItem(product)); // Dispatch the action to add the product to the cart
 
         setAddedToCart((prevState) => ({ // Update the local state to show that the product is added
-            ...prevState, [product.name] : true, // Set the current product's name as a key with value 'true'
+            ...prevState, [product.name]: true, // Set the current product's name as a key with value 'true'
         }));
     };
     
@@ -292,14 +292,14 @@ function ProductList({ onHomeClick }) {
                             <div>{category.category}</div> {/* Display the category name */}
                         </h1>
                         <div className='product-list'> {/* Container for the list of plant cards */}
-                            {category.plants.map((plant, plantIndex) => ( // Loop through each plant in the current category
-                                <div className='product-card' key={plantIndex}> {/* Unique key for each plant card */}
+                            {category.plants.map((plant, plantIndex) => ( 
+                                <div className='product-card' key={plantIndex}> {/* Plant card key */}
                                 <img className='product-image' src={plant.image} alt={plant.name} />
-                                <div className='product-title'>{plant.name}</div> {/*Display plant name */}
+                                <div className='product-title'>{plant.name}</div> {/*Plant name */}
                                 {/* Plant description and cost*/}
                                 <div className='product-description'>{plant.description}</div>
-                                <div className='product-cost'>${plant.cost}</div>
-                                <button className='product-button' onClick={() => handleAddToCart(plant)}>Add to Cart</button> // Handle adding plant to cart
+                                <div className='product-cost'>{plant.cost}</div>
+                                <button className='product-button' onClick={() => handleAddToCart(plant)}>Add to Cart</button> {/* Handle adding plant to cart */}
                                 </div> 
                             ))}
                         </div>
