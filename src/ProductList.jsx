@@ -260,7 +260,8 @@ function ProductList({ onHomeClick }) {
         dispatch(addItem(product)); // Dispatch the action to add the product to the cart
 
         setAddedToCart((prevState) => ({ // Update the local state to show that the product is added
-            ...prevState, [product.name]: true, // Set the current product's name as a key with value 'true'
+            ...prevState,
+            [product.name]: true, // Set the current product's name as a key with value 'true'
         }));
     };
     
